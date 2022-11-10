@@ -1,12 +1,10 @@
 #  Main script for Information analysis of the reverse process of Diffusion models
 #  Asher Stout
 
-import tqdm
 import argparse
 import logging
+import tqdm
 import PIL
-import seaborn
-import pandas as pd
 import numpy as np
 
 
@@ -22,6 +20,13 @@ def main():
         type=str,
         default="samples/",
         help="path to input directory; should contain single folder of reverse process images"
+    )
+    args.add_argument(
+        "--recursive",
+        nargs='?',
+        type=bool,
+        default=False,
+        help="whether to load images from the input directory recursively"
     )
     args.add_argument(
         "--out",
