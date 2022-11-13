@@ -128,5 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# PyCharm project files
+# PyCharm & general project files
 .idea/
+logs/
+files/iddpm

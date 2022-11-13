@@ -1,9 +1,13 @@
-#  Main script for Information analysis of the reverse process of Diffusion models
-#  Asher Stout
+"""
+Main script for Information analysis of the reverse process of Diffusion models
+python main.py --inp /local/scratch/samples/celeba/ddim50/runs/ --recursive True --analysis info --steps 51
+"""
+import os.path
 
+from helper.loader import load_all
 import argparse
 import logging
-import tqdm
+# import tqdm
 import PIL
 import numpy as np
 
@@ -42,11 +46,17 @@ def main():
         help="type of analysis to perform on the data"
     )
     args.add_argument(
-        "--log",
+        "--expr",
         nargs='?',
         type=str,
-        default="log.txt",
-        help="file to print logs to"
+        default="expr",
+        help="experiment name"
+    )
+    args.add_argument(
+        "--steps",
+        type=int,
+        default=0,
+        help="number of reverse process steps"
     )
 
     return args.parse_args()
@@ -54,8 +64,11 @@ def main():
 
 if __name__ == "__main__":
     arg = main()
-    logging.basicConfig(filename=arg.log, level=logging.DEBUG,
+    if not os.path.exists("logs/"):
+        os.mkdir("logs/")
+    logging.basicConfig(filename="logs/{name}.txt".format(name=arg.expr), level=logging.DEBUG,
                         format="%(asctime)s: %(message)s", filemode="w")
+    data = load_all(arg.inp, arg.recursive, arg.steps)
 
     # Delegate to correct mode file
     

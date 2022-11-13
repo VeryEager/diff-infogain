@@ -1,6 +1,6 @@
 """
 Command-line run:
-python export.py --files ../files --output /local/scratch/samples/cifar10/iddpm/ --batch_size 2 --diffusion_steps 4000
+python export.py --files ../files/iddpm --output /local/scratch/samples/cifar10/iddpm/ --batch_size 2 --diffusion_steps 4000
 
 """
 
