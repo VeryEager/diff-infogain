@@ -1,2 +1,4 @@
-# diff-infogain
-Contained in this repository are scripts used to extract information statistics from the reverse processes of diffusion models.
+# Quantifying Feature Emergence in the Reverse Processes of Diffusion Probabilistic Models
+Diffusion Probabilistic Models (DPMs) are a nascent class of Score-based generative model that have routinely demonstrated high sample quality in a variety of applications. Unlike other generative models DPMs do not rely on a well-behaved latent space during sampling, instead utilizing a parameterized Markov chain called the reverse process to iteratively generate samples from pure noise. Although passive observations have been made about the dynamics of the reverse process no formal study has analysed the critical transition from noise to highlevel features. Motivated by this dearth of research we propose three methods that capture the rate of feature emergence in the reverse process. We name these methods Stepwise Entropy, Label Variance and Sample Consistency. From experiments across several popular DPMs and image datasets we report previously unobserved behaviours of the reverse process. 
+
+Contained in this repository are scripts used to extract information statistics from the reverse processes of diffusion models. All files are a WIP until the publication has been finalized.
