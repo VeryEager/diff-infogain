@@ -89,4 +89,6 @@ if __name__ == "__main__":
 
     for file in glob.glob(arg.files+'/*.np[yz]'):
         raw = np.load(file)
+        raw = raw['arr_0']
+        print(file, " ", str(raw.shape))
         exporter.extract_from(raw)

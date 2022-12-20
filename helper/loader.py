@@ -39,6 +39,6 @@ def load_sample(sample, steps):
     :return:
     """
     assert len(sample) == steps
-    steps = [cv2.imread(s) for s in sample]
+    steps = [cv2.imread(s, cv2.IMREAD_GRAYSCALE) for s in sample]
     steps = np.roll(np.array(steps), 1, axis=0)
     return steps
